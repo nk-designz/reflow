@@ -1,24 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { addNote, flushNotes } from './actions';
 
 function App() {
+
+  let newNote;
+  const dispatch = useDispatch();
+  const notes = useSelector( state => state.notes)
+                .map(
+                  (note) => <div key={note} className="note" >{note}</div>
+                );
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button className="flush"  onClick={ () => dispatch(flushNotes()) }>🗑️</button>
+      <div className="new">
+        <form>
+          <input type="text" name="name" placeholder="Type in a note" value={newNote}  onChange={ (event) => newNote = event.target.value } />
+        </form>
+        <button onClick={ () => dispatch(addNote(newNote)) }>➕</button>
+      </div>
+      <div className="note-container">
+        {notes}
+      </div>
     </div>
   );
 }

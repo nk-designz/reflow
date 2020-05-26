@@ -5,9 +5,85 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: whitesmoke;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#root {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.App {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.new { 
+  padding: 2vw;
+  background-color: blueviolet;
+  border-bottom-left-radius: 0.2em;
+  border-bottom-right-radius: 0.2em;
+  align-items: center;
+  text-align: center;
+  display: flex;
+}
+
+.new input[type="text"] {
+  border-color: transparent;
+  border-bottom-left-radius: 0.2em;
+  border-top-left-radius: 0.2em;
+  background-color: whitesmoke;
+  width: 50vw;
+  height: 3vh;
+  color: darkgray;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.new form {
+  margin-left: auto;
+}
+
+.new button {
+  margin-right: auto;
+  height: 3vh;
+  border-color: transparent;
+  border-top-right-radius: 0.2em;
+  border-bottom-right-radius: 0.2em;
+  background-color: whitesmoke;
+  color: darkgray;
+}
+
+.note {
+   background-color: white;
+   margin: 1vw;
+   padding: 3vw;
+   box-shadow: 3px 4px 7px lightgray;
+   border-radius: 0.2em;
+}
+
+.flush {
+  position: fixed;
+  display: block;
+  border-radius: 4em;
+  height: 64px;
+  width: 64px;
+  background-color: blueviolet;
+  border-color: transparent;
+  color: white;
+  margin-left: calc(100vw - 64px * 2);
+  margin-top: calc(100vh - 64px * 2);
+  font-size: 3em;
+  text-align: center;
+}
+
+.flush:hover {
+  background-color: #8ab2e2;
 }
