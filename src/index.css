@@ -26,34 +26,32 @@ code {
 }
 
 .new { 
-  padding: 2vw;
+  padding: 20px;
   background-color: blueviolet;
-  border-bottom-left-radius: 0.2em;
-  border-bottom-right-radius: 0.2em;
   align-items: center;
   text-align: center;
   display: flex;
+  box-shadow: 3px 4px 7px lightgray;
+  position: fixed;
+  width: 100vw;
 }
 
 .new input[type="text"] {
+  margin-left: auto;
   border-color: transparent;
   border-bottom-left-radius: 0.2em;
   border-top-left-radius: 0.2em;
   background-color: whitesmoke;
   width: 50vw;
-  height: 3vh;
+  height: 40px;
   color: darkgray;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
 
-.new form {
-  margin-left: auto;
-}
-
 .new button {
   margin-right: auto;
-  height: 3vh;
+  height: 40px;
   border-color: transparent;
   border-top-right-radius: 0.2em;
   border-bottom-right-radius: 0.2em;
@@ -61,12 +59,16 @@ code {
   color: darkgray;
 }
 
+.note-container {
+  margin-top: 100px;
+}
+
 .note {
-   background-color: white;
-   margin: 1vw;
-   padding: 3vw;
-   box-shadow: 3px 4px 7px lightgray;
-   border-radius: 0.2em;
+  background-color: white;
+  margin: 20px;
+  padding: 30px 3vw 30px 3vw;
+  box-shadow: 3px 4px 7px lightgray;
+  border-radius: 0.2em;
 }
 
 .flush {
@@ -78,8 +80,8 @@ code {
   background-color: blueviolet;
   border-color: transparent;
   color: white;
-  margin-left: calc(100vw - 64px * 2);
-  margin-top: calc(100vh - 64px * 2);
+  margin-left: calc(100vw - 106px);
+  margin-top:  calc(100vh - 106px);
   font-size: 3em;
   text-align: center;
 }

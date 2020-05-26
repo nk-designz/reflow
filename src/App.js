@@ -8,17 +8,23 @@ function App() {
   const dispatch = useDispatch();
   const notes = useSelector( state => state.notes)
                 .map(
-                  (note) => <div key={note} className="note" >{note}</div>
+                  (note) => <div key={note.heading} className="note" ><h1>{note.heading}</h1>{note.body}</div>
                 );
+
+  const getNoteObject = (noteText) => {
+    const nodeArr = noteText.split(' | ')
+    return {
+      heading: nodeArr[0],
+      body: nodeArr[1]
+    }
+  }
 
   return (
     <div className="App">
       <button className="flush"  onClick={ () => dispatch(flushNotes()) }>🗑️</button>
       <div className="new">
-        <form>
-          <input type="text" name="name" placeholder="Type in a note" value={newNote}  onChange={ (event) => newNote = event.target.value } />
-        </form>
-        <button onClick={ () => dispatch(addNote(newNote)) }>➕</button>
+        <input type="text" name="name" placeholder="Type in a note | seperate heading and body with '|'" value={newNote}  onChange={ (event) => newNote = event.target.value } />
+        <button onClick={ () => dispatch(addNote(getNoteObject(newNote))) }>➕</button>
       </div>
       <div className="note-container">
         {notes}
