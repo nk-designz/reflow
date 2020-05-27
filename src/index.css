@@ -69,6 +69,7 @@ code {
   padding: 30px 3vw 30px 3vw;
   box-shadow: 3px 4px 7px lightgray;
   border-radius: 0.2em;
+  z-index: 10;
 }
 
 .flush {
@@ -88,4 +89,13 @@ code {
 
 .flush:hover {
   background-color: #8ab2e2;
+}
+
+.empty {
+  color: lightgray;
+  position: absolute;
+  width: 100vw;
+  text-align: center;
+  margin-top: 3vw;
+  z-index: -1;
 }

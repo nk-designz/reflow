@@ -16,25 +16,28 @@ function App() {
                 );
 
   const getNoteObject = (noteText) => {
-    const nodeArr = noteText.split(' | ')
     return {
-      heading: nodeArr[0],
-      body: nodeArr[1]
-    }
-  }
+      heading: noteText.replace(/(([^\s]+\s\s*){4})(.*)/,"$1…"), // The first 4 words aare used for the heading 
+      body: noteText}}
 
   return (
     <div className="App">
       <button className="flush"  onClick={ () => dispatch(flushNotes()) }>
-      <FontAwesomeIcon icon={faTrash} height="42px" />
+        <FontAwesomeIcon icon={faTrash} />
       </button>
       <div className="new">
-        <input type="text" name="name" placeholder="Type in a note | seperate heading and body with '|'" value={newNote}  onChange={ (event) => newNote = event.target.value } />
+        <input type="text" 
+               name="name" 
+               placeholder="Type in to remember" 
+               value={newNote} 
+               onChange={ (event) => newNote = event.target.value } 
+               />
         <button onClick={ () => dispatch(addNote(getNoteObject(newNote))) }>
           <FontAwesomeIcon icon={faPlus} />
         </button>
       </div>
       <div className="note-container">
+        <h1 className="empty" >Add a note :)</h1>
         {notes}
       </div>
     </div>
